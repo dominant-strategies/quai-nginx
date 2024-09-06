@@ -4,7 +4,7 @@ quai-nginx is the standard reverse proxy configuration for the go-quai client. I
 
 ## Background Knowledge
 
-Quai Network is a multi-shard layer-1 protocol. Each shard within the network operates as an independent blockchain, with periodic linkages to other shards. Because each of the shards operate independently, any data and information requests from external parties must be routed to the correct shard.
+Quai Network is a sharded layer-1 protocol where shards operate as an independent blockchains that periodically creates links to other shards in order to trustlessly transfer state. Since shards operate independently, all data requested from or submitted to the network must be routed to the correct shard.
 
 `quai-nginx` provides a standard routing protocol to request data from the correct shard. The current supported shards are as follows:
 
@@ -56,21 +56,21 @@ The nginx reverse proxy sets a standard human readable path for each shard that 
 
 | Shard Name | Path      |
 | ---------- | --------- |
-| prime      | /prime/   |
-| cyprus     | /cyprus/  |
-| paxos      | /paxos/   |
-| hydra      | /hydra/   |
-| cyprus1    | /cyprus1/ |
-| cyprus2    | /cyprus2/ |
-| cyprus3    | /cyprus3/ |
-| paxos1     | /paxos1/  |
-| paxos2     | /paxos2/  |
-| paxos3     | /paxos3/  |
-| hydra1     | /hydra1/  |
-| hydra2     | /hydra2/  |
-| hydra3     | /hydra3/  |
+| prime      | /prime   |
+| cyprus     | /cyprus  |
+| paxos      | /paxos   |
+| hydra      | /hydra   |
+| cyprus1    | /cyprus1 |
+| cyprus2    | /cyprus2 |
+| cyprus3    | /cyprus3 |
+| paxos1     | /paxos1  |
+| paxos2     | /paxos2  |
+| paxos3     | /paxos3  |
+| hydra1     | /hydra1  |
+| hydra2     | /hydra2  |
+| hydra3     | /hydra3  |
 
-For example, requesting the path `https://RPCURL/cyprus1/` will route the request to the cyprus 1 http port (9200). Requesting the path `wss://RPCURL/cyprus1/` will route the request to the cyprus 1 websocket port (8200).
+For example, requesting the path `https://RPCURL/cyprus1/` will route the request to the cyprus1 http port (9200). Requesting the path `wss://RPCURL/cyprus1/` will route the request to the cyprus1 websocket port (8200).
 
 ## SDK Implications
 
